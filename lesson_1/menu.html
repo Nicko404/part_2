@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>My search for movies</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+    <script>
+    $(document).ready(function() {
+
+      $(".btn1").click(
+        function() {
+          let movie = $("#id1").val();
+
+          $.ajax({
+            type: 'GET',
+            url: 'https://api.themoviedb.org/3/search/movie',
+            data: {'api_key' : '2d961f95952d434353cbccf5407275a8', 'query' : movie},
+            success: function(data) {
+              let film = null;
+              for (let i = 0; i < data.results.length; i++) {
+                film = {
+                  title: data.results[i].title,
+                  originalTitle: data.results[i].original_title,
+                  populyrity: data.results[i].popularity,
+                  id: data.results[i].id,
+                  originalLanguage: data.results[i].original_language,
+                  release: data.results[i].release_date,
+                };
+              createTable(document.querySelector('#elem'), film);
+
+              };
+            },
+            error: function(data) {
+              console.log(data);
+
+            }
+          });
+        }
+      );
+    }
+    )
+
+    </script>
+
+</head>
+
+<body id="body" bgcolor="#f0f0f0">
+
+
+  <p class="p1" style="color : red">Enter movie's name</p>
+    <input id="id1" type="text" name="query" size="50">
+
+    <button class="btn1" type="submit" name="button">Search</button>
+    <button class="btn2" type="reset" name="button" onclick="clearDiv()">Clear</button>
+    <div id="elem"></div>
+
+</body>
+</html>

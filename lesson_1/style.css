@@ -1,0 +1,26 @@
+p {
+  text-ilign: justify;
+  margin-left: 45%;
+}
+
+#id1 {
+  margin-left: 35%;
+}
+button.btn1 {
+  background-color: #0dd05b;
+  color: #ffffff;
+  width: 2.5cm;
+}
+
+button.btn2 {
+  background-color: #d00d0d;
+  color: #ffffff;
+  width: 2cm;
+}
+
+table  td {
+  length: 0.01cm;
+  width: 10cm;
+  padding: 20px;
+  border: 1px solid black;
+}
