@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Login in my service</title>
+    <link rel="stylesheet" href="styles/forIndex.css">
+</head>
+<body id="body">
+    <h1 id="loginH3">Login</h1>
+
+    <form action="mainform" method="POST" id="form">
+        
+        <input type="text" name="Login" id="login" placeholder="Login" required>
+            <br><br>
+
+        <input type="password" name="Password" id="password" placeholder="Password" required>
+            <br>
+
+        <input type="checkbox" name="rememberMe" id="rememberMe" value="forget"> 
+            <span>remember me</span> 
+
+        <a href="index.html" id="forget">Forget?</a>
+            <br>
+
+    <button type="submit" name="btnLogin" id="btnLogin">Login</button>
+        <br>
+
+ </form>
+ 
+    <button form="opreg" type="submit" id="btnRegistration">Registration</button>
+    <form action="register.html" id="opreg" method="POST"></form>
+
+   
+</body>
